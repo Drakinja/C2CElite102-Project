@@ -18,6 +18,3 @@ if account_creation == 'Yes':
 
 elif account_creation == 'No':
      print(f'Alright, please enter your pin to access your account information.')
-
-
-
