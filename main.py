@@ -1,3 +1,7 @@
+import mysql.connector
+connection = mysql.connector.connect(user = 'william', database = 'Local instance MySQL80', password = 'Dynamowill102008')
+connection.close()
+
 #Welcome user to bot
 print('Welcome to ... Bank account manager bot.')
 
