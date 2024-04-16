@@ -1,6 +1,6 @@
 import mysql.connector
 connection = mysql.connector.connect(user = 'william', database = 'Local instance MySQL80', password = 'Dynamowill102008')
-connection.close()
+
 
 #Welcome user to bot
 print('Welcome to ... Bank account manager bot.')
@@ -21,4 +21,8 @@ if account_creation == 'Yes':
    pin = input('Please create a pin for your account. Do not share or spread this for safety of your account')
 
 elif account_creation == 'No':
-     print(f'Alright, please enter your pin to access your account information.')
+     print('Alright, please enter your pin to access your account information.')
+  
+
+
+connection.close()
