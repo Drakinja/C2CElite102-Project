@@ -3,12 +3,12 @@ program_loop = True
 import mysql.connector
 connection = mysql.connector.connect(user = 'william', database = 'Local instance MySQL80', password = 'Dynamowill102008')
 
+
 #Welcome user to bot
 print('Welcome to ... Bank account manager bot.')
 
 #confirm if new user or not
 account_creation = input('User, would you like to create a new account, type Yes. If you already have one, type No. Be mindful it is caps sensitive.')
-
 
 if account_creation == 'Yes':
 #Acquire user info
@@ -74,18 +74,57 @@ def display_menu():
                        if savings_choice.isdigit():    
                          savings_choice = int(savings_choice)
                          if 1 <= savings_choice <= 4:
-                             if savings_choice == 1:
-                                 student_deposit = input('How much do you want to deposit in your Student account?')
-                             elif savings_choice == 2:
-                                 retirement_deposit = input('How much do you want to deposit in your Retirement Account?')
-                             elif savings_choice == 3:
-                                  savings_deposit = input('How much do you want to deposit in your Savings Account?')
-                             elif savings_choice == 4:
-                                  return in_use             
+                                if savings_choice == 1:
+                                   student_deposit = input('How much do you want to deposit in your Student account?')                             
+                                   cursor = connection.cursor()
+
+                                   addData = ("INSERT INTO pin_management (Student balance) VALUES ({student_deposit})")
+
+                                   cursor.execute(addData)
+
+                                   connection.commit()
+
+                                   cursor.close()
+
+                                elif savings_choice == 2:
+                                   retirement_deposit = input('How much do you want to deposit in your Retirement Account?')
+                                   cursor = connection.cursor()
+
+                                   addData = ("INSERT INTO pin_management (Retirement Balance) VALUES ({retirement_deposit})")
+
+                                   cursor.execute(addData)
+
+                                   connection.commit()
+
+                                   cursor.close()
+
+                                elif savings_choice == 3:
+                                    savings_deposit = input('How much do you want to deposit in your Savings Account?')
+                                    cursor = connection.cursor()
+
+                                    addData = ("INSERT INTO pin_management (Savings) VALUES ({savings_deposit})")
+
+                                    cursor.execute(addData)
+
+                                    connection.commit()
+
+                                    cursor.close()
+                                elif savings_choice == 4:
+                                    return in_use              
               elif user_choice == 2: #Tell them balance
                    print(f'You have a balance of dollars in your account')           
               elif user_choice == 3: #Input added ammount & tell them new balance
                   normal_deposit = input('How much you youl like to deposit?') 
+                  cursor = connection.cursor()
+
+                  addData = ("INSERT INTO pin_management (Normal balance) VALUES ({normal_deposit})")
+
+                  cursor.execute(addData)
+
+                  connection.commit()
+
+                  cursor.close()
+                
               elif user_choice == 4: #Input removed ammount & tell them new balance
                   normal_withdraw = input('How much would you like to withdraw?')
               elif user_choice == 5:
