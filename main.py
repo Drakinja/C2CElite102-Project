@@ -46,7 +46,18 @@ def user_selection():
                  print("2. Retirement Account")
                  print("3. Savings Account")
                  print("4.  Return to Menu\n") 
-               
+                 def savings_choice():
+                    if savings_choice.isdigit():    
+                      user_choice2 = int(savings_choice)
+                      if 1 <= user_choice <= 4:
+                          if savings_choice == 1:
+                              print()
+                          elif savings_choice == 2:
+                              print()
+                          elif savings_choice == 3:
+                              print()
+                          elif savings_choice == 4:
+                               return in_use
             elif user_choice == 2:
                  print(f'You have dollars in your account')
             elif user_choice == 3:
