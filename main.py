@@ -25,9 +25,29 @@ if account_creation == 'Yes':
    #Have them make a pin
    pin = input('Please create a pin for your account contain only numbers. Do not share or spread this for safety of your account')
 
+   cursor = connection.cursor()
+
+   addData = ("INSERT INTO pin_management (Usernames, Pins) VALUES ({name},{pin})")
+
+   cursor.execute(addData)
+
+   connection.commit()
+
+   cursor.close()
+
 elif account_creation == 'No':
      print('Alright, please enter your pin to access your account information.')
+     cursor = connection.cursor()
 
+     testQuery = ("SELECT * FROM pin_management")
+
+     cursor.execute(testQuery)
+
+     for item in cursor:
+       print(item)
+
+     cursor.close()
+  
 def display_menu():
     print("\n Here is what you can do In your account")
     print("1. Create savings")
