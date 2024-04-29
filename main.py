@@ -22,7 +22,7 @@ if account_creation == 'Yes':
    pin = input('Please create a pin for your account contain only numbers. Do not share or spread this for safety of your account')
 
 elif account_creation == 'No':
-     print(f'Alright, please enter your pin to access your account information.')
+     print('Alright, please enter your pin to access your account information.')
 
 def display_menu():
     print("\n Here is what you can do In your account")
@@ -40,12 +40,13 @@ def user_selection():
         user_choice = int(user_choice)
         if 1 <= user_choice <= 5:
             if user_choice == 1:
-             def savings_menu():
+              def savings_menu():
                  print("\n **what type of savings would you like to make?**")
                  print("1. Student Account")
                  print("2. Retirement Account")
                  print("3. Savings Account")
-                 print("4.  Return to Menu\n")
+                 print("4.  Return to Menu\n") 
+               
             elif user_choice == 2:
                  print(f'You have dollars in your account')
             elif user_choice == 3:
