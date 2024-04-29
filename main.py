@@ -1,3 +1,7 @@
+
+program_loop = True
+
+
 import mysql.connector
 connection = mysql.connector.connect(user = 'william', database = 'Local instance MySQL80', password = 'Dynamowill102008')
 
@@ -66,5 +70,11 @@ def user_selection():
                  print('How much would you like')
             elif user_choice == 5:    
                  return in_use       
+
+while program_loop:
+  display_menu()
+  in_use = user_selection()
+  program_loop = in_use 
+
 
 connection.close()
